@@ -35,15 +35,15 @@ function findlocation(stuff) {
         var location = stuff[i].location;
         
         if(location){
+            L.circle([location.coordinates[1], location.coordinates[0]],{
+                color: "green",
+                fillColor: "green",
+                fillOpacity: 0.75,
+                radius: 500
+            });
             eqsite.push([location.coordinates[1], location.coordinates[0]]);
         }
     }
-    var eqcircle = L.circle(eqsite, {
-        color: "green",
-        fillcolor: "green",
-        fillopacity: 0.25,
-        radius: 70
-    });
   createMap(eqlocale);
 }
 
